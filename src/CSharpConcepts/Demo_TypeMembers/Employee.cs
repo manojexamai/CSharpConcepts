@@ -53,24 +53,33 @@
 
         #region PROPERTY member
 
+        private int _ID;            // backing DataField
+
         public int ID
         {
             // GET ACCESSOR
             get
             {
                 // 1.2.3.4.5.
-                return this.EmployeeID;
+                return this._ID;
             }
 
             // SET ACCESSOR
             set
             {
                 // 1.2.3.4.5.
-                this.EmployeeID = value;
+                this._ID = value;
             }
         }
 
         #endregion
+
+
+        // Auto-Implemented Property
+        public string Designation
+        {
+            get; set;
+        }
     }
 
 }

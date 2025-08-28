@@ -25,29 +25,58 @@ INSTANTIATION MODIFIER
 static
 
 
+ARGUMENT MODIFIER
+========================
+ByVal
+	Default Value
+ByRef
+ByOut
+Params
+
+INHERITANCE MODIFIER
+=======================
+virtual -> override
+abstract -> override
+override -> override
+new
+sealed 
+
+INHERITANCE ACCESSOR
+====================
+this
+base
+
+
 TOOLS of C# Language:
 ==============================
 Namespace
-Struct --
-Class --
-Field
-Property
-Method --
+Struct / Class --
+	Field
+	Property
+	Method 
+	Indexer (instance only)
+	Constructor (type/instance)
 
 OBJECT ORIENTED CONCEPTS
 ===========================
 Types
 	ValueTypes
+		Enum
+		Constant
+		Struct
 	ReferenceTypes
 		Class --
 Declaration
-Instantiation --
-Initialization --
-Encapsulation
+Instantiation (implicit for valuetypes, explict for referencetypes )
+Initialization 
+Encapsulation		(1.2.3.4.5)
+Aggregation (one object contains other objects)
 Polymorphism
-	Overload --
-	Override --
-Inheritance --
+	Overload
+	Override
+	Overshadow/Eclipse
+	-- Interface
+Inheritance
 
 
 
