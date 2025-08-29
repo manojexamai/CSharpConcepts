@@ -50,12 +50,15 @@ base
 TOOLS of C# Language:
 ==============================
 Namespace
+Enum
 Struct / Class --
 	Field
 	Property
 	Method 
 	Indexer (instance only)
 	Constructor (type/instance)
+	Event
+Delegate
 
 OBJECT ORIENTED CONCEPTS
 ===========================
@@ -66,6 +69,8 @@ Types
 		Struct
 	ReferenceTypes
 		Class --
+		Delegate
+		Event
 Declaration
 Instantiation (implicit for valuetypes, explict for referencetypes )
 Initialization 
