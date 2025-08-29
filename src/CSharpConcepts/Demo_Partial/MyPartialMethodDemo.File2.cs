@@ -2,9 +2,11 @@
 
 internal partial class MyPartialMethodDemo
 {
-    partial void Step2()
+    // void RETURN
+    // are PRIVATE METHODS
+    partial void Step2 ()
     {
-        Console.WriteLine("step 2 called");
+        Console.WriteLine( "step 2 called" );
     }
 
 }

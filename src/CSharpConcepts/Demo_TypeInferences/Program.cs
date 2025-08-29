@@ -14,28 +14,24 @@ namespace Demo_TypeInferences
     /// </summary>
     class Program
     {
-        int i = 10;
-        object o = 10;
-        // var j = 10;                      // not possible.
+        // var x = 10;                      // not allowed (RULE #3)
 
         static void Main(string[] args)
         {
             int i = 10;
-            int i2;                     // declare the variable without intialization
-            string s = "hello world";
-            Console.WriteLine("DATA TYPE: {0} is of the type {1}", i, i.GetType());
-            int j = i;
 
-            object o = 10;      // boxing
-            Console.WriteLine("BOXING: {0} is of the type {1}", o, o.GetType());
-            int j2 = (int)o;    // unboxing
+            object o = (short)10;                  // boxing
+            o = 10L;
+            int j = (int) o;                // unboxing
 
-            var x = 10;
-            var x2 = 0;                    // have to initialize
-            Console.WriteLine("TYPE INFERENCE: {0} is of the type {1}", x, x.GetType());
-            int j3 = x;
+            // var y;                       // not allowed (RULE #2)
+            var x = (short)10;              // infer type on first assignment.
+            // x = 10L;
 
+            string s = "hello";
+            var s2 = s;                     // string? s2 = s;
 
+            var z = o;                      // object? z = o;
 
             int i3a = m1();
             int i3b = Convert.ToInt32( m2() );      // m2() returns string
@@ -67,6 +63,18 @@ namespace Demo_TypeInferences
         static bool m3()
         {
             return true;
+        }
+
+        static object m(bool giveInt)
+        {
+            if(giveInt)
+            {
+                return 10;
+            }
+            else
+            {
+                return "10";
+            }
         }
     }
 }

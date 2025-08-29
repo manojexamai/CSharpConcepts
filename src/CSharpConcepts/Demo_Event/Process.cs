@@ -22,7 +22,24 @@ namespace Demo_Event
 
                 if(OnPercentageCompleted is not null)        // check if EVENT IS SUBSCRIBED
                 {
-                    OnPercentageCompleted( i * 10 );         // RAISE THE EVENT (invoke delegate)
+                    // RAISE THE EVENT (invoke delegate) on the same thread - running synchronously
+                    // OnPercentageCompleted( i * 10 );         
+
+                    // Raise the event, allowing handlers to run asynchronously
+                    Delegate[]? array = OnPercentageCompleted?.GetInvocationList();
+                    if( array is not null)
+                    {
+                        // for ( int counter = 0 ; counter < array.Length ; counter++ )
+                        // {
+                        //    PercentageCompletedHandler? handler = array[counter] as PercentageCompletedHandler;
+                        //    Task.Run( () => handler?.Invoke( i * 10 ) );
+                        // }
+
+                        foreach ( PercentageCompletedHandler handler in array.Cast<PercentageCompletedHandler>() )
+                        {
+                            Task.Run( () => handler?.Invoke( i * 10 ) );
+                        }
+                    }
                 }
 
                 System.Threading.Thread.Sleep( 2000 );      // 1000 milliseconds = 1 second.
