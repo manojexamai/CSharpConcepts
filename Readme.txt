@@ -58,6 +58,7 @@ Struct / Class --
 	Indexer (instance only)
 	Constructor (type/instance)
 	Event
+	Destructor --
 Delegate
 
 OBJECT ORIENTED CONCEPTS
@@ -68,9 +69,10 @@ Types
 		Constant
 		Struct
 	ReferenceTypes
-		Class --
+		Class
 		Delegate
 		Event
+		Generic
 Declaration
 Instantiation (implicit for valuetypes, explict for referencetypes )
 Initialization 

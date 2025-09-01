@@ -18,7 +18,7 @@ namespace Demo_Task_AsyncAwait
             Task<bool> result = DoWorkAsync(10);
             Console.WriteLine("Async method called.\nResult will display once available from the async method.");
 
-            result.Wait();
+            // result.Wait();
 
             Console.WriteLine($"Returns: {result.Result}");
 

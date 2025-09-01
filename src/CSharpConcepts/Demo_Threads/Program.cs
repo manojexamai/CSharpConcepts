@@ -14,9 +14,9 @@ namespace Demo_Threads
 
             // Console.WriteLine( "------------------------------------------" );
 
-            // Demo2.RunThis();
-            // Console.WriteLine( "------------------------------------------" );
-            // Console.WriteLine( "---- EXITING MAIN" );
+            //Demo2.RunThis();
+            //Console.WriteLine( "------------------------------------------" );
+            //Console.WriteLine( "---- EXITING MAIN" );
 
             Demo3.RunThis();
         }

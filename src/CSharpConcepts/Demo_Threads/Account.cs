@@ -31,11 +31,12 @@ namespace Demo_Threads
             {
                 if (balance >= amount)
                 {
+                    Console.Write( "\n" );
                     Console.Write("{0,15} ", this.balance);     // Balance before Withdrawal
                     Console.Write("{0,10} ", amount);           // Amount to be Withdrawn
                     this.balance -= amount;
                     Console.Write("{0,15}", this.balance);      // Balance after Withdrawal
-                    Console.WriteLine(":{0}", System.Threading.Thread.CurrentThread.ManagedThreadId);
+                    Console.Write(":{0}", System.Threading.Thread.CurrentThread.ManagedThreadId);
                     retVal = amount;
                 }
                 else
@@ -58,6 +59,7 @@ namespace Demo_Threads
             }
             catch (System.Exception exp)
             {
+                Console.WriteLine();
                 Console.WriteLine("EXCEPTION TYPE: {0}", exp.GetType());
                 Console.WriteLine(exp.Message);
             }

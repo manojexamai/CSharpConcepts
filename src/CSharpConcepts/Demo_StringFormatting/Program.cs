@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Demo_StringFormatting
+﻿namespace Demo_StringFormatting
 {
     class Program
     {
@@ -17,10 +11,14 @@ namespace Demo_StringFormatting
             decimal salary = 5000.75M;          // same as = (decimal) 5000.75;
 
             Console.WriteLine("bool : {0}", b);
-            Console.WriteLine("name: {0}, salary: {1}", name, salary);
+            Console.WriteLine("name: {0}, salary: {1}", name, salary);      // implicitly invoke string.Format();
+
+            string output = string.Format( "name: {0}, salary {1}", name, salary );
+            Console.WriteLine(output);  
+
 
             string message;
-            message = "name: " + name + ", salary: " + salary.ToString();
+            message = "name: " + name + ", salary: " + salary;          // .ToString();
             Console.WriteLine("after CONCATENATION: {0}", message);
             message = string.Format("name: {0}, salary: {1}", name, salary);
             Console.WriteLine("after String.Format(): {0}", message);
@@ -41,6 +39,15 @@ namespace Demo_StringFormatting
             // C# > 10
             // - String Interpolation
             string x = "hello world";
+
+            // 10 hello world     5,430
+            // 20 another world      30
+            Console.WriteLine( "{0} {1, -20} $ {2, 10:#,##0.00}", 10, "Hello world", 5430 );
+            Console.WriteLine( "{0} {1, -20} $ {2, 10:F}", 20, "another world", 30 );
+            Console.WriteLine( $"{10} {"Hello world".ToUpper(),-20} $ {5430,10:#,##0.00}" );
+            Console.WriteLine();
+
+
             int y = 50;
             Console.WriteLine("x = {0}", x);
             Console.WriteLine($"x = {x}");      // "x = " + x.ToString() // string.Format("x = {x}")

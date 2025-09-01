@@ -7,25 +7,31 @@ using System.Threading.Tasks;
 namespace Demo_Task
 {
     /// <summary>
-    ///     Using the Action to execute the Task
+    ///     Using Task.Run in .NET 4.5
     /// </summary>
     class Demo2
     {
         public static void Run()
         {
-            // version 1
-            Action objD = new Action(Demo2.PrintMessage);
-            Task objTask = new Task(objD);
-            objTask.Start();
+            // Syncrhonous Version
+            PrintMessage();
 
-            // version 2
-            Task task = new Task(new Action(Demo2.PrintMessage));
-            task.Start();
+            // Asynchronous Version
+            Task task = Demo2.PrintMessageAsync();
+            task.Wait();
+
+            Console.WriteLine( "--- Run 6 completed!" );
+        }
+
+        // NOTE: Name the method with "Async" suffix
+        private async static Task PrintMessageAsync()
+        {
+            await Task.Run(() => Demo2.PrintMessage());
         }
 
         private static void PrintMessage()
         {
-            Console.WriteLine("Hello Task library! - 2");
+            Console.WriteLine("Hello Task library! - 6");
         }
     }
 }

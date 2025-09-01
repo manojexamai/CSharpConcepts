@@ -14,29 +14,38 @@ namespace Demo_Threads
     {
         public static void DoThis()
         {
-            Console.WriteLine("-- called in Thread: {0}", Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine("(T1) -- called in Thread: {0}", Thread.CurrentThread.ManagedThreadId);
         }
 
         public static void RunThis()
         {
-            Console.WriteLine("Running in Thread: {0}", Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine("(MAIN) Running in Thread: {0}", Thread.CurrentThread.ManagedThreadId);
 
             // ThreadStart objD = new ThreadStart(Demo2.DoThis);
             // Thread t = new Thread( objD );
 
-            Thread t = new Thread( new ThreadStart(Demo2.DoThis) );
-            t.Start();
+            Thread t1 = new Thread( new ThreadStart(Demo2.DoThis) );
+            t1.Start();
 
-            Console.WriteLine("Doing something else in Thread: {0}", Thread.CurrentThread.ManagedThreadId);
+            Thread t3 = new Thread( Demo2.DoThis );     // implicitly instantiating the ThreadStart Delegate object
+            t3.Start();
 
+            Console.WriteLine("(MAIN) Doing something else in Thread: {0}", Thread.CurrentThread.ManagedThreadId);
+
+            // Anonymous Method for the ThreadStart Delegate
             Thread t2 = new Thread(() =>
             {
                 Thread.Sleep(10000);
-                Console.WriteLine("-- anonymous method called in Thread: {0}", Thread.CurrentThread.ManagedThreadId);
+                Console.WriteLine("(T2) -- anonymous method called in Thread: {0}", Thread.CurrentThread.ManagedThreadId);
             });
             t2.Start();
 
-            Console.WriteLine("--- back in the main Thread {0}", Thread.CurrentThread.ManagedThreadId);
+            // force the branched out threads to join the parent thread
+            t1.Join();
+            t2.Join();
+            t3.Join();
+
+            Console.WriteLine("(MAIN) --- back in the main Thread {0}", Thread.CurrentThread.ManagedThreadId);
 
 
         }

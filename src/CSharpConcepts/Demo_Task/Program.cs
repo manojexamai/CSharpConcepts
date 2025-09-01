@@ -13,20 +13,12 @@ namespace Demo_Task
             Demo1.Run();
             Demo2.Run();
             Demo3.Run();
-            Demo4.Run();
+
+            Demo4_DemoOfParallel.Run();
+
             Demo5.Run();
 
-            Console.WriteLine();
-
-            Demo6.Run();
-            Demo7.Run();
-
-            Console.WriteLine();
-
-            Demo8_DemoOfParallel.Run();
-            Console.WriteLine();
-
-            Demo9.Run();
+            Console.WriteLine( "----- exiting MAIN" );
         }
     }
 }
