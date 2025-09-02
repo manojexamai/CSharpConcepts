@@ -71,6 +71,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_Exceptions_Library", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_Destructor_FW", "Demo_Destructor_FW\Demo_Destructor_FW.csproj", "{5262ABCA-1147-4072-8228-B5D4DD23D88D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_DynamicType", "Demo_DynamicType\Demo_DynamicType.csproj", "{B26E0BF1-6D48-4EBB-BA84-5322E2734130}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_NewTypes", "Demo_NewTypes\Demo_NewTypes.csproj", "{6564B408-5515-49C5-9C43-64CDD325A8B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +205,14 @@ Global
 		{5262ABCA-1147-4072-8228-B5D4DD23D88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5262ABCA-1147-4072-8228-B5D4DD23D88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5262ABCA-1147-4072-8228-B5D4DD23D88D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26E0BF1-6D48-4EBB-BA84-5322E2734130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26E0BF1-6D48-4EBB-BA84-5322E2734130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26E0BF1-6D48-4EBB-BA84-5322E2734130}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26E0BF1-6D48-4EBB-BA84-5322E2734130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6564B408-5515-49C5-9C43-64CDD325A8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6564B408-5515-49C5-9C43-64CDD325A8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6564B408-5515-49C5-9C43-64CDD325A8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6564B408-5515-49C5-9C43-64CDD325A8B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
