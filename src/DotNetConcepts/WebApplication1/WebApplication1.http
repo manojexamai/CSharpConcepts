@@ -1,0 +1,30 @@
+﻿@WebApplication1_HostAddress = https://localhost:7160
+
+GET {{WebApplication1_HostAddress}}/Employees
+Accept: application/json
+
+###
+
+GET {{WebApplication1_HostAddress}}/Demo
+
+
+###
+
+GET {{WebApplication1_HostAddress}}/
+
+GET {{WebApplication1_HostAddress}}/Demo
+
+###
+
+GET {{WebApplication1_HostAddress}}/api/mydemo
+
+###
+
+GET {{WebApplication1_HostAddress}}/api/mydemo
+
+###
+
+@message=Hello%20World
+GET {{WebApplication1_HostAddress}}/api/mydemo/GetSomethingElse?message={{message}}
+
+###
