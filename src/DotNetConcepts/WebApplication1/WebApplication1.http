@@ -20,10 +20,6 @@ GET {{WebApplication1_HostAddress}}/api/mydemo
 
 ###
 
-GET {{WebApplication1_HostAddress}}/api/mydemo
-
-###
-
 @message=Hello%20World
 GET {{WebApplication1_HostAddress}}/api/mydemo/GetSomethingElse?message={{message}}
 

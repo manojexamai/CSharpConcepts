@@ -29,12 +29,16 @@ namespace WebApplication1.Controllers
         // https://localhost:7160/api/MyDemo/GetSomethingElse?message=My%20Demo
         // https://localhost:7160/api/MyDemo/GetSomethingElse?message=My+Demo
         [HttpGet( "GetSomethingElse" )]
-        public IActionResult GetSomething (string message)
+        public IActionResult GetSomething (string? message)
         {
+            if( message is null)
+            {
+                return BadRequest( "Message is required" );
+            }
+
             _logger.LogInformation( "GetSomething was called" );
             return Ok( "hello world" );
-
-        }
+       }
 
     }
 }
