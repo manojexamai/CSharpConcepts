@@ -8,7 +8,7 @@ builder.Services.AddCors( options =>
 {
     options.AddPolicy( "AllowAngularApp", policy =>
     {
-        policy.WithOrigins( "http://localhost:62867" )               // Angular App (NOTE: is running on HTTP not HTTPS)
+        policy.WithOrigins( "http://localhost:59947" )               // Angular App (NOTE: is running on HTTP not HTTPS)
               .AllowAnyHeader()
               .AllowAnyMethod();
     } );
