@@ -6,10 +6,12 @@ import { provideHttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { EmployeeList } from './employee-list/employee-list';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    EmployeeList
   ],
   imports: [
     BrowserModule,
@@ -21,4 +23,5 @@ import { App } from './app';
   ],
   bootstrap: [App]
 })
+
 export class AppModule { }

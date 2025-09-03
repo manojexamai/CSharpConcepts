@@ -1,0 +1,22 @@
+.employee-table {
+  border-collapse: collapse;
+  width: 50%;
+  margin-top: 1rem;
+}
+
+  .employee-table th,
+  .employee-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  .employee-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+    font-weight: bold;
+  }
+
+.error {
+  color: red;
+  font-weight: bold;
+}
