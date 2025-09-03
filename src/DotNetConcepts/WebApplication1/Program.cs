@@ -3,7 +3,26 @@ var builder = WebApplication.CreateBuilder( args );
 // Register the Controllers into Services DI container 
 builder.Services.AddControllers();
 
+// Register CORS Policy for the Angular App.
+builder.Services.AddCors( options =>
+{
+    options.AddPolicy( "AllowAngularApp", policy =>
+    {
+        policy.WithOrigins( "http://localhost:62867" )               // Angular App (NOTE: is running on HTTP not HTTPS)
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    } );
+} );
+
 var app = builder.Build();
+
+// Enable auto-redirection to HTTPS protocol
+app.UseHttpsRedirection();
+
+
+// Enable CORS Policy
+app.UseCors( "AllowAngularApp" );
+
 
 // Activate the Controller registration routes.
 app.MapControllers();
