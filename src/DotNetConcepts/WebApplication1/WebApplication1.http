@@ -24,3 +24,9 @@ GET {{WebApplication1_HostAddress}}/api/mydemo
 GET {{WebApplication1_HostAddress}}/api/mydemo/GetSomethingElse?message={{message}}
 
 ###
+
+@name=Manoj+Sharma
+GET {{WebApplication1_HostAddress}}/api/values/GetContent?name={{name}}
+Accept: text/html
+
+###

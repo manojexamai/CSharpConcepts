@@ -14,26 +14,33 @@ var builder = WebApplication.CreateBuilder( args );
 
 // builder.Services.AddControllers();
 
-builder.Services.AddControllers( options =>
-{
-    // Respect the Accept header sent by the browser/client
-    options.RespectBrowserAcceptHeader = true;
+builder.Services
+    .AddControllers( options =>
+    {
+        // Respect the Accept header sent by the browser/client
+        options.RespectBrowserAcceptHeader = true;
 
-    // Return 406 Not Acceptable if the client requests an unsupported format
-    options.ReturnHttpNotAcceptable = true;
+        // Return 406 Not Acceptable if the client requests an unsupported format
+        options.ReturnHttpNotAcceptable = true;
 
-} )
-.AddXmlSerializerFormatters();               // Add support for XML serialization
+    } )
+    .AddXmlSerializerFormatters();               // Add support for XML serialization
 
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services
+    .AddOpenApi();
+
 
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if ( app.Environment.IsDevelopment() )
 {
+
+    // OPEN API documentation is accessable at: https://localhost:7260/openapi/v1.json
     app.MapOpenApi();
 }
 
@@ -48,10 +55,12 @@ app.MapControllers();
 app.Use( async ( context, next ) =>
 {
 
-    context.Response.Headers.Append( "Author", "Manoj Kumar Sharma" );
+   // context.Response.Headers.Append( "Author", "Manoj Kumar Sharma" );
 
     // Call the next delegate/middleware in the pipeline
     await next();
+
+    // do something else also (after the next middleware has executed)
 
 } );
 

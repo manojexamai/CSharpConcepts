@@ -41,8 +41,10 @@ builder.Services.AddTransient<IMyTransientService, MyService>();
 // Scoped: a different object is provided for each request.
 builder.Services.AddScoped<IMyScopedService, MyService>();
 
-
+// Register the Controllers and Routes defined in them.
 builder.Services.AddControllers();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -61,6 +63,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+// Enable the Routes defined in the Controllers
 app.MapControllers();
 
 // app.MapControllerRoute(name: "default", pattern: "{controller}/{action}/{id?}");

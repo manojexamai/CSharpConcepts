@@ -1,7 +1,20 @@
 var builder = WebApplication.CreateBuilder( args );
 
 // Register the Controllers into Services DI container 
-builder.Services.AddControllers();
+// builder.Services.AddControllers();
+
+builder.Services
+    .AddControllers( options =>
+    {
+        // Respect the Accept header sent by the browser/client
+        options.RespectBrowserAcceptHeader = true;
+
+        // Return 406 Not Acceptable if the client requests an unsupported format
+        options.ReturnHttpNotAcceptable = true;
+
+    } )
+    .AddXmlSerializerFormatters();               // Add support for XML serialization
+
 
 // Register CORS Policy for the Angular App.
 builder.Services.AddCors( options =>
@@ -10,6 +23,7 @@ builder.Services.AddCors( options =>
     {
         policy.WithOrigins( "http://localhost:59947" )               // Angular App (NOTE: is running on HTTP not HTTPS)
               .AllowAnyHeader()
+              // .WithMethods("POST", "GET")
               .AllowAnyMethod();
     } );
 } );

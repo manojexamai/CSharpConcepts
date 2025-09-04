@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class HelloService {
 
   private apiUrl = 'https://localhost:7160/';
@@ -16,7 +17,7 @@ export class HelloService {
 
   getHello(): Observable<string> {
 
-    console.log("getHello() called!!!")
+    console.log("getHello() called!!!");
 
     return this.http.get(this.apiUrl, { responseType: 'text' });
   }

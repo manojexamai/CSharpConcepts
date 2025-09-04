@@ -1,3 +1,7 @@
+// To generate the Component:
+// Right-Click on "app" folder and choose "Open in Terminal"
+// > ng generate component employee-list
+
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from './employee.service';
 import { Employee } from './employee.model';

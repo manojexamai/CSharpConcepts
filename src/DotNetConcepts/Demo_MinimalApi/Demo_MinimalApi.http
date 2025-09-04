@@ -1,0 +1,7 @@
+﻿@Demo_MinimalApi_HostAddress = https://localhost:7160
+
+@a=10
+@b=20
+GET {{Demo_MinimalApi_HostAddress}}/Add?a={{a}}&b={{b}}
+
+###

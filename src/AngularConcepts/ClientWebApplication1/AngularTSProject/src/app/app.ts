@@ -21,7 +21,6 @@ import { HelloService } from './hello.service';                 // register the 
 
       <h3>List of Employees</h3>
       <app-employee-list></app-employee-list>
-
     `
 
 })

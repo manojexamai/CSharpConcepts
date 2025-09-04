@@ -1,9 +1,16 @@
 // Created using ASP.NET CORE EMPTY PROJECT TEMPLATE
 
 var builder = WebApplication.CreateBuilder( args );
+
 var app = builder.Build();
 
 app.MapGet( "/", () => "Hello World!" );
+
+app.MapGet( "/Add", ( int a, int b ) =>
+{
+    return a + b;
+    // return new { result = a + b };
+} );
 
 app.MapGet( "/Birds", () =>
 {
