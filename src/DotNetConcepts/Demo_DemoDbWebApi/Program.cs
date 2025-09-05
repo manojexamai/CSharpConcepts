@@ -26,8 +26,21 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if ( app.Environment.IsDevelopment() )
 {
+
+    // OpenAPI 3.x response schema: https://localhost:7178/openapi/v1.json
     app.MapOpenApi();
+
+
+    // To access the Swagger UI: https://localhost:7178/swagger/index.html
+    // Install Nuget Package: Swashbuckle.AspNetCore.SwaggerUI
+    //  Check out: Milan Jovanovic's Youtube video for other alternatives: https://www.youtube.com/watch?v=0qtwYT4n2CM 
+    app.UseSwaggerUI(setupOptions =>
+    {
+        setupOptions.SwaggerEndpoint( url:"/openapi/v1.json", name:"My DemoDB Web API v1");
+    });
+
 }
+
 
 app.UseHttpsRedirection();
 

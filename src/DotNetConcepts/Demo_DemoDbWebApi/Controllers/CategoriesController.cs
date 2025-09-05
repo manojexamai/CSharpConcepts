@@ -22,25 +22,38 @@ public class CategoriesController : ControllerBase
 
 
     // GET: api/Categories
+    // [HttpGet]
+    // public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
+    // {
+    //    return await _context.Categories.ToListAsync();
+    // }
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
+    public async Task<IActionResult> GetCategories()
     {
-        return await _context.Categories.ToListAsync();
+        return Ok(await _context.Categories.ToListAsync());
     }
+
 
 
     // GET: api/Categories/5
     [HttpGet("{id}")]
-    public async Task<ActionResult<Category>> GetCategory(int id)
+    //public async Task<ActionResult<Category>> GetCategory(int id)         // <-- corrected
+    public async Task<IActionResult> GetCategory(int? id)
     {
+        if (id is null)                                                     // <-- corrected
+        {                                                                   // <-- corrected
+            return BadRequest("CategoryID missing");                        // <-- corrected
+        }                                                                   // <-- corrected
+
         var category = await _context.Categories.FindAsync(id);
 
-        if (category == null)
+        if (category is null)
         {
             return NotFound();
         }
 
-        return category;
+        //    return category;                                              // <-- corrected
+        return Ok(category);
     }
 
 
@@ -73,7 +86,7 @@ public class CategoriesController : ControllerBase
         }
 
         // return NoContent();
-        return Accepted();          // corrected this to ensure proper HTTP 202 response
+        return Accepted();                          // <-- corrected to ensure proper HTTP 202 response
     }
 
 
@@ -111,8 +124,14 @@ public class CategoriesController : ControllerBase
 
     // DELETE: api/Categories/5
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteCategory(int id)
+    // public async Task<IActionResult> DeleteCategory(int id)                
+    public async Task<IActionResult> DeleteCategory(int? id)                // <-- corrected 
     {
+        if (id is null)                                                     // <-- corrected
+        {                                                                   // <-- corrected
+            return BadRequest("CategoryID missing");                        // <-- corrected
+        }                                                                   // <-- corrected
+
         var category = await _context.Categories.FindAsync(id);
         if (category == null)
         {
