@@ -28,17 +28,17 @@ public class CategoriesController : ControllerBase
     //    return await _context.Categories.ToListAsync();
     // }
     [HttpGet]
-    public async Task<IActionResult> GetCategories()
-    {
-        return Ok(await _context.Categories.ToListAsync());
-    }
+    public async Task<IActionResult> GetCategories()                        // <-- corrected
+    {                                                                       // <-- corrected
+        return Ok(await _context.Categories.ToListAsync());                 // <-- corrected
+    }                                                                       // <-- corrected
 
 
 
     // GET: api/Categories/5
     [HttpGet("{id}")]
-    //public async Task<ActionResult<Category>> GetCategory(int id)         // <-- corrected
-    public async Task<IActionResult> GetCategory(int? id)
+    //public async Task<ActionResult<Category>> GetCategory(int id)        
+    public async Task<IActionResult> GetCategory(int? id )                  // <-- corrected
     {
         if (id is null)                                                     // <-- corrected
         {                                                                   // <-- corrected
@@ -55,6 +55,33 @@ public class CategoriesController : ControllerBase
         //    return category;                                              // <-- corrected
         return Ok(category);
     }
+
+
+    // Returns a Category with all of its related products
+
+    [HttpGet( "GetCategoryWithProducts/{id}" )]
+    public async Task<IActionResult> GetCategoryWithProducts ( int? id )
+    {
+        if ( id is null ) 
+        {                                                                  
+            return BadRequest( "CategoryID missing" );
+        }
+
+        //var category = await _context.Categories
+        //                             .FindAsync( id );
+
+        var category = await _context.Categories
+                                     .Include(c => c.Products)
+                                     .SingleOrDefaultAsync(c => c.CategoryId == id);
+
+        if ( category is null )
+        {
+            return NotFound();
+        }
+
+        return Ok( category );
+    }
+
 
 
     // PUT: api/Categories/5

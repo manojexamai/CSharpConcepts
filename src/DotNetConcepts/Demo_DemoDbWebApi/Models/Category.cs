@@ -1,4 +1,6 @@
-﻿namespace Demo_DemoDbWebApi.Models;
+﻿using System.Xml.Serialization;
+
+namespace Demo_DemoDbWebApi.Models;
 
 
 public class Category

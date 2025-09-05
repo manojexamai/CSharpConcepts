@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
 
 namespace Demo_DemoDbWebApi.Models;
 
@@ -24,7 +26,10 @@ public class Product
 
     public string? Description { get; set; }                                // NVARCHAR(MAX)
 
-    [DefaultValue("getdate()")]
+
+
+    [DataType( DataType.DateTime )]              // Needed for Converter to serialize DateTime->String and String->DateTime.
+    // public DateTime AddedOn { get; set; } = DateTime.Now;
     public DateTimeOffset AddedOn { get; set; } = DateTimeOffset.Now;       // DateTime.UtcNow
 
 
@@ -44,6 +49,8 @@ public class Product
 
     // 2. For Navigation from Product to Category, provide Category Object reference
     //    It would NULL when the Product is instantiated, but not Initialized.
+    //    This Transaction->Master reference during OPEN API type generation creates an unwanted "Category2" type.
+    [JsonIgnore]                              // Needed to suppress "Category2" unwanted type 
     [ForeignKey(nameof(Product.CategoryId))]
     public Category? Category { get; set; }
 

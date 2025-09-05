@@ -34,6 +34,7 @@ if ( app.Environment.IsDevelopment() )
     // To access the Swagger UI: https://localhost:7178/swagger/index.html
     // Install Nuget Package: Swashbuckle.AspNetCore.SwaggerUI
     //  Check out: Milan Jovanovic's Youtube video for other alternatives: https://www.youtube.com/watch?v=0qtwYT4n2CM 
+    //   and Nick Chapsas
     app.UseSwaggerUI(setupOptions =>
     {
         setupOptions.SwaggerEndpoint( url:"/openapi/v1.json", name:"My DemoDB Web API v1");
