@@ -1,0 +1,24 @@
+.category-table {
+  border-collapse: collapse;
+  width: 80%;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .category-table th,
+  .category-table td {
+    border: 1px solid #ddd;
+    padding: 6pt;
+  }
+
+  .category-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+    font-weight: bold;
+  }
+
+.error {
+  color: red;
+  font-weight: bold;
+}

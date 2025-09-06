@@ -21,7 +21,24 @@ builder.Services
 builder.Services
     .AddOpenApi();
 
+
+// Register CORS Policy for the Angular Client App.
+builder.Services.AddCors( options =>
+{
+    options.AddPolicy( "AllowAngularApp", policy =>
+    {
+        policy.WithOrigins( "http://localhost:60842" )               // Angular App (NOTE: is running on HTTP not HTTPS)
+              .AllowAnyHeader()
+              // .WithMethods("POST", "GET")
+              .AllowAnyMethod();
+    } );
+} );
+
+
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if ( app.Environment.IsDevelopment() )
@@ -46,6 +63,9 @@ if ( app.Environment.IsDevelopment() )
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+// Enable CORS Policy
+app.UseCors( "AllowAngularApp" );
 
 app.MapControllers();
 

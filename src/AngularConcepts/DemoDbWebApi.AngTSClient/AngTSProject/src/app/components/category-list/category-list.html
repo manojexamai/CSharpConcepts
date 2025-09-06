@@ -1,0 +1,22 @@
+<h3>List of Categories</h3>
+
+<div *ngIf="loading">Loading categories...</div>
+
+<table *ngIf="!loading && categories.length > 0" class="category-table" border="1" cellpadding="5">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Category Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of categories">
+      <td>{{ cat.categoryId }}</td>
+      <td>{{ cat.categoryName }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!loading && categories.length === 0">
+  No categories found.
+</div>

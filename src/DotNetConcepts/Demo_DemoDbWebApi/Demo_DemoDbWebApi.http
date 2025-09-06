@@ -1,6 +1,8 @@
-@Demo_DemoDbWebApi_HostAddress = http://localhost:5208
+@Demo_DemoDbWebApi_HostAddress = https://localhost:7178
 
-GET {{Demo_DemoDbWebApi_HostAddress}}/weatherforecast/
+
+GET {{Demo_DemoDbWebApi_HostAddress}}/api/categories
 Accept: application/json
 
 ###
+
