@@ -8,9 +8,9 @@ import { Component, signal } from '@angular/core';
 
   template:
     `
-      <h1>{{ title }}</h1>
+      <router-outlet><router-outlet>
 
-      <app-category-list></app-category-list>
+      <h1>{{ title }}</h1>
     `
 })
 export class App {

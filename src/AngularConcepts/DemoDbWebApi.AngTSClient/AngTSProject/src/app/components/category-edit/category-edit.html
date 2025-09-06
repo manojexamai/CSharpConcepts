@@ -1,0 +1,15 @@
+<h2>Edit Category</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="categoryName">Category Name:</label>
+  <input id="categoryName" formControlName="categoryName" />
+
+  <div *ngIf="form.get('categoryName')?.invalid && form.get('categoryName')?.touched" style="color:red;">
+    <small *ngIf="form.get('categoryName')?.errors?.['required']">Category Name is required.</small>
+    <small *ngIf="form.get('categoryName')?.errors?.['maxlength']">Category Name cannot exceed 50 characters.</small>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Save</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</form>
+

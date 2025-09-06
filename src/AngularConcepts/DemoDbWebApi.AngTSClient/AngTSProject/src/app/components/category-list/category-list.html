@@ -7,12 +7,20 @@
     <tr>
       <th>ID</th>
       <th>Category Name</th>
+      <th style="text-align:center; width: 120px;">
+        <a routerLink="/categories/create">+ Add Category</a>
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let cat of categories">
       <td>{{ cat.categoryId }}</td>
       <td>{{ cat.categoryName }}</td>
+      <td style="text-align:center">
+        <a [routerLink]="['/categories/edit', cat.categoryId]">Edit</a>
+        &nbsp;|&nbsp;
+        <a [routerLink]="['/categories/delete', cat.categoryId]">Delete</a>
+      </td>
     </tr>
   </tbody>
 </table>

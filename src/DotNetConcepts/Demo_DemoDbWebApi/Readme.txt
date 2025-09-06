@@ -1,3 +1,5 @@
+Angular Project to List all Categories
+
 01. Add the Angular TS Client Project
 02. Open View > Terminal.  And either in "Power Shell" OR "Developer Command Prompt" 
     navigate to the "Project" folder using the "CD" command.
@@ -35,9 +37,39 @@
 09. Finally, in the main app component file - "src/app/app.ts", 
     replace the templateUrl with the customized template to show the category-list component.
 
-
 ================================================================================================
 
+10. Add the components for create, edit and delete:
+    > ng generate component components/category-create --standalone=true
+        CREATE src/app/components/category-create/category-create.spec.ts
+        CREATE src/app/components/category-create/category-create.ts
+        CREATE src/app/components/category-create/category-create.css
+        CREATE src/app/components/category-create/category-create.html
+    > ng generate component components/category-edit --standalone=true
+        CREATE src/app/components/category-edit/category-edit.spec.ts
+        CREATE src/app/components/category-edit/category-edit.ts
+        CREATE src/app/components/category-edit/category-edit.css
+        CREATE src/app/components/category-edit/category-edit.html
+    > ng generate component components/category-delete --standalone=true
+        CREATE src/app/components/category-delete/category-delete.spec.ts
+        CREATE src/app/components/category-delete/category-delete.ts
+        CREATE src/app/components/category-delete/category-delete.css
+        CREATE src/app/components/category-delete/category-delete.html
+11. Register all the API service methods in the "category.service.ts" file.
+12. Register the Routes for the components in "app-routing.module.ts" file. 
+13. In the "category-list.ts" module file, register the Routermodule.
+14. In the "category-list.html" file, provide the route links.
+15. In the app component "app.ts" file, register the router outlet by adding the following line in the template:
+        <router-outlet></router-outlet>
+16. Now, complete the create component "category-create.ts" and its template "category-create.html" files.
+17. And similarly, complete the edit and delete components.
+18. Global styles can be applied at "styles.css" file.  Like:
+        body { }
+    Component-level styles are finally rendered like this:
+        body[_ngcontent-abc] { }
+    Also make sure that you use "styleUrls" (plural) in components, not "styleUrl"!
+
+================================================================================================
 
 Standalone Components (Angular 15+)
     A component can exist without being declared in any NgModule.
@@ -79,10 +111,10 @@ Non-standalone Components (Traditional Angular, pre-v15)
 
     Typical structure looks like:
         @NgModule({
-          declarations: [MyComponent],          // must be declared here
+          declarations: [MyComponent],                              // must be declared here
           imports: [CommonModule, FormsModule],
           bootstrap: [AppComponent]
         })
         export class AppModule {}
 
-    So the component is not self-contained — it relies on a module to “host” it.
+    So the component is not self-contained — it relies on a module to "host" it.

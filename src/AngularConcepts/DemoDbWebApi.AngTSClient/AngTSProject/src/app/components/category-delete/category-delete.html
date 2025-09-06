@@ -1,0 +1,13 @@
+<h2>Delete Category</h2>
+
+<div *ngIf="category; else notFound">
+  <p>Are you sure you want to delete the category <strong>{{ category.categoryName }}</strong>?</p>
+  <button (click)="confirmDelete()">Yes, Delete</button>
+  <button (click)="cancel()">Cancel</button>
+</div>
+
+<ng-template #notFound>
+  <p>Category not found.</p>
+  <button (click)="cancel()">Back</button>
+</ng-template>
+

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 14pt;
+}
+
+input, label, button
+{
+    font-family: Verdana, sans-serif;
+    font-size: 14pt;
+    padding: 4px 2px;
+}
+
+input, label {
+  display: block;
+}
+
+button {
+    margin-top: 10px;
+}
