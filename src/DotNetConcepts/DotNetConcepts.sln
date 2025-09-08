@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_SecuredWebApi", "Demo_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_SecuredWebApi.ConsoleClient", "Demo_SecuredWebApi.ConsoleClient\Demo_SecuredWebApi.ConsoleClient.csproj", "{AA6F02FE-7D9A-4AA2-AB10-5398C3D49EE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_DemoDbMVCWithAuth", "Demo_DemoDbMVCWithAuth\Demo_DemoDbMVCWithAuth.csproj", "{F5EED592-D9F6-41D4-892C-9F2AA05EC35C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{AA6F02FE-7D9A-4AA2-AB10-5398C3D49EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA6F02FE-7D9A-4AA2-AB10-5398C3D49EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA6F02FE-7D9A-4AA2-AB10-5398C3D49EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5EED592-D9F6-41D4-892C-9F2AA05EC35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5EED592-D9F6-41D4-892C-9F2AA05EC35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5EED592-D9F6-41D4-892C-9F2AA05EC35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5EED592-D9F6-41D4-892C-9F2AA05EC35C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
