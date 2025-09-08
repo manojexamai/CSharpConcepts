@@ -1,0 +1,42 @@
+# This is a REST client (.http file) to test the API.
+
+
+@Demo_SecuredWebApi_HostAddress = https://localhost:7204
+
+@username=user
+@password=password
+
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidXNlciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJleHAiOjE3NTcxOTg3MjgsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyMDQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo3MjA0In0.fdQXyfT6JQ-bdcOns1KFKQTFJyHAZBsaX29DOur_zc8
+
+###
+
+GET {{Demo_SecuredWebApi_HostAddress}}/api/demo/public
+
+###
+
+
+POST {{Demo_SecuredWebApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "password": "{{password}}"
+}
+
+###
+
+GET {{Demo_SecuredWebApi_HostAddress}}/api/demo/private
+Authorization: Bearer {{authToken}}
+
+###
+
+GET {{Demo_SecuredWebApi_HostAddress}}/api/demo/private
+Authorization: Bearer {{authToken}}
+
+###
+
+
+GET {{Demo_SecuredWebApi_HostAddress}}/api/demo/checkmyrole
+Authorization: Bearer {{authToken}}
+
+###

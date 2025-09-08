@@ -1,6 +1,10 @@
 <h2>Delete Category</h2>
 
 <div *ngIf="category; else notFound">
+
+  <p>Category ID: <b>{{ category.categoryId }}</b></p>
+  <p>Category Name: <b>{{ category.categoryName }}</b></p>
+
   <p>Are you sure you want to delete the category <strong>{{ category.categoryName }}</strong>?</p>
   <button (click)="confirmDelete()">Yes, Delete</button>
   <button (click)="cancel()">Cancel</button>

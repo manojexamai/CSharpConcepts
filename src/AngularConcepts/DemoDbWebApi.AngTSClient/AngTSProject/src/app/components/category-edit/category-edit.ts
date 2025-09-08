@@ -46,6 +46,9 @@ export class CategoryEdit implements OnInit {
             categoryName: category.categoryName
           });
         }
+        else {
+          console.error("Category was not found!")
+        }
       },
       error: (err) => console.error('Error loading category', err)
     });

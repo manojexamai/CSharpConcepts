@@ -34,6 +34,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_DemoDbWebApi", "Demo_D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_DemoDbWebApi.Tests", "Demo_DemoDbWebApi.Tests\Demo_DemoDbWebApi.Tests.csproj", "{00949580-9460-477A-B443-097A975BC516}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_SecuredWebApi", "Demo_SecuredWebApi\Demo_SecuredWebApi.csproj", "{8DD2762A-8494-448F-BF26-7CD5C32249D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_SecuredWebApi.ConsoleClient", "Demo_SecuredWebApi.ConsoleClient\Demo_SecuredWebApi.ConsoleClient.csproj", "{AA6F02FE-7D9A-4AA2-AB10-5398C3D49EE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +96,14 @@ Global
 		{00949580-9460-477A-B443-097A975BC516}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00949580-9460-477A-B443-097A975BC516}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00949580-9460-477A-B443-097A975BC516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DD2762A-8494-448F-BF26-7CD5C32249D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DD2762A-8494-448F-BF26-7CD5C32249D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DD2762A-8494-448F-BF26-7CD5C32249D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DD2762A-8494-448F-BF26-7CD5C32249D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6F02FE-7D9A-4AA2-AB10-5398C3D49EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6F02FE-7D9A-4AA2-AB10-5398C3D49EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6F02FE-7D9A-4AA2-AB10-5398C3D49EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6F02FE-7D9A-4AA2-AB10-5398C3D49EE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

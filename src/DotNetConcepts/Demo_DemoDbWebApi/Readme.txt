@@ -3,14 +3,7 @@ Angular Project to List all Categories
 01. Add the Angular TS Client Project
 02. Open View > Terminal.  And either in "Power Shell" OR "Developer Command Prompt" 
     navigate to the "Project" folder using the "CD" command.
-03. Next, add the Service to the DI container. Run the following command: 
-        > ng generate service services/category
-    This will create the following two files in the "services" folder:
-        src/app/services/category.spec.ts
-        src/app/services/category.ts
-04. Rename the "category.ts" file to "category.service.ts" 
-    And move the interface to its own file "category.model.ts".
-04. Now add support for HttpClientModule in the application in the "src/app/app-module.ts" file:
+03. Now add support for HttpClientModule in the application in the "src/app/app-module.ts" file:
         ...
         // Import the HttpClientModule class
         import { provideHttpClient } from '@angular/common/http';         
@@ -19,7 +12,14 @@ Angular Project to List all Categories
             ...
             provideHttpClient()
         ]
-05. Next, add the Component to display the list of categories.
+04. Next, add the Service to the DI container. Run the following command: 
+        > ng generate service services/category
+    This will create the following two files in the "services" folder:
+        src/app/services/category.spec.ts
+        src/app/services/category.ts
+05. Rename the "category.ts" file to "category.service.ts" 
+    And move the interface to its own file "category.model.ts".
+06. Next, add the Component to display the list of categories.
     In the Terminal Window, after navigating to the "Project" folder, run the following command:
         > ng generate component components/category-list --standalone=true
     This will generate the StandAlone Component by:
@@ -36,10 +36,11 @@ Angular Project to List all Categories
 08. Now, update the "category-list.css" file 
 09. Finally, in the main app component file - "src/app/app.ts", 
     replace the templateUrl with the customized template to show the category-list component.
+10. Configure the Routing in the "app-routing-module.ts" file
 
 ================================================================================================
 
-10. Add the components for create, edit and delete:
+11. Add the components for create, edit and delete:
     > ng generate component components/category-create --standalone=true
         CREATE src/app/components/category-create/category-create.spec.ts
         CREATE src/app/components/category-create/category-create.ts
@@ -55,15 +56,15 @@ Angular Project to List all Categories
         CREATE src/app/components/category-delete/category-delete.ts
         CREATE src/app/components/category-delete/category-delete.css
         CREATE src/app/components/category-delete/category-delete.html
-11. Register all the API service methods in the "category.service.ts" file.
-12. Register the Routes for the components in "app-routing.module.ts" file. 
-13. In the "category-list.ts" module file, register the Routermodule.
-14. In the "category-list.html" file, provide the route links.
-15. In the app component "app.ts" file, register the router outlet by adding the following line in the template:
+12. Register all the API service methods in the "category.service.ts" file.
+13. Register the Routes for the components in "app-routing.module.ts" file. 
+14. In the "category-list.ts" module file, register the Routermodule.
+15. In the "category-list.html" file, provide the route links.
+16. In the app component "app.ts" file, register the router outlet by adding the following line in the template:
         <router-outlet></router-outlet>
-16. Now, complete the create component "category-create.ts" and its template "category-create.html" files.
-17. And similarly, complete the edit and delete components.
-18. Global styles can be applied at "styles.css" file.  Like:
+17. Now, complete the create component "category-create.ts" and its template "category-create.html" files.
+18. And similarly, complete the edit and delete components.
+19. Global styles can be applied at "styles.css" file.  Like:
         body { }
     Component-level styles are finally rendered like this:
         body[_ngcontent-abc] { }
@@ -118,3 +119,19 @@ Non-standalone Components (Traditional Angular, pre-v15)
         export class AppModule {}
 
     So the component is not self-contained — it relies on a module to "host" it.
+
+================================================================================================
+
+To learn more: 
+
+	Create an ASP.NET Core app with Angular in Visual Studio
+	https://learn.microsoft.com/en-us/visualstudio/javascript/tutorial-asp-net-core-with-angular?view=vs-2022
+
+	"Angular App" (with TypeScript)
+	https://learn.microsoft.com/en-us/visualstudio/javascript/tutorial-create-angular-app?view=vs-2022
+
+	Angular Application with .Net Core Web API 
+	(C#, Angular,TypeScript)
+	Part 1 to 4: https://www.youtube.com/watch?v=0DBy2NHtmu4
+
+	Google for "Angular and ASP.NET Core" project:

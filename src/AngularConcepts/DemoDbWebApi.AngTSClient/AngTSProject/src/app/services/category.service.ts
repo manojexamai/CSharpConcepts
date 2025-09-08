@@ -9,7 +9,7 @@ import { Category } from "./category.model";
 })
 export class CategoryService {
 
-  private apiUrl = 'https://localhost:7178/api/categories';     // The Web API endpoint
+  private apiUrl = 'https://localhost:7178/api/categories';     // The Web API endpoint (path of Controller)
 
   constructor(private http: HttpClient) { }
 
